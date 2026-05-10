@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #03060d,
+    #08111f,
+    #0f2238,
+    #132d46
+  );
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero {
+  font-size: 3rem;
+  color: #8dc6f5;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 0 0 18px rgba(70, 130, 180, 0.5);
+}
+
+.alert {
+  width: 100%;
+  max-width: 430px;
+  padding: 15px 18px;
+  margin-bottom: 25px;
+  border-radius: 14px;
+  background: rgba(70, 130, 180, 0.15);
+  border: 1px solid #4682b4;
+  color: #d7ecff;
+  text-align: center;
+  font-size: 0.95rem;
+  box-shadow:
+    0 0 20px rgba(70, 130, 180, 0.25),
+    0 0 35px rgba(0, 0, 0, 0.35);
+  animation: fadeIn 0.3s ease;
+}
+
+.tabs {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  width: 160px;
+  margin-top: 0;
+  background: #0d1826;
+  border: 1px solid #2b4f70;
+}
+
+.tabs button.active {
+  background: linear-gradient(
+    135deg,
+    #4682b4,
+    #24435f
+  );
+  box-shadow: 0 0 18px rgba(70, 130, 180, 0.45);
+}
+
+.registrationContainer,
+.loginContainer,
+.profile {
+  width: 100%;
+  max-width: 430px;
+  background: rgba(7, 12, 20, 0.96);
+  border: 1px solid rgba(70, 130, 180, 0.22);
+  border-radius: 22px;
+  padding: 35px;
+  box-shadow:
+    0 0 25px rgba(70, 130, 180, 0.15),
+    0 0 50px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.registrationHero,
+.loginHero,
+.profile h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #b6dcff;
+}
+
+.registrationInputs,
+.loginInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #2d5477;
+  background: #08111d;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+input::placeholder {
+  color: #8ca6be;
+}
+
+input:focus,
+select:focus {
+  border-color: #4682b4;
+  box-shadow: 0 0 15px rgba(70, 130, 180, 0.6);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    #4682b4,
+    #2e597d
+  );
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 18px;
+  transition: 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: linear-gradient(
+    135deg,
+    #5ea3db,
+    #37688f
+  );
+  box-shadow: 0 0 20px rgba(70, 130, 180, 0.5);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile p {
+  background: rgba(70, 130, 180, 0.08);
+  padding: 14px;
+  border-radius: 10px;
+  border-left: 4px solid #4682b4;
+  word-break: break-word;
+}
+
+.profile strong {
+  color: #b6dcff;
+}
+
+.loading {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8dc6f5;
+  font-size: 2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    font-size: 2.4rem;
+  }
+
+  .registrationContainer,
+  .loginContainer,
+  .profile {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .hero {
+    font-size: 2rem;
+  }
+
+  .registrationHero,
+  .loginHero,
+  .profile h2 {
+    font-size: 1.6rem;
+  }
+
+  .registrationContainer,
+  .loginContainer,
+  .profile {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .tabs {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .tabs button {
+    width: 100%;
+    max-width: 430px;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 0.95rem;
+    padding: 13px;
+  }
+
+  .alert {
+    font-size: 0.9rem;
+    padding: 13px;
+  }
+}
